@@ -113,11 +113,16 @@ export async function init(canvas: HTMLCanvasElement) {
 		particles[baseIndex + 7] = (Math.random() - 0.5) * 0.1; // mass and padding
 	}
 
-	// Big heavy steady ball
-	particles[7] = 100;
+	// Big heavy steady balls
+	particles[7] = 1000;
 	particles[4] = 0;
 	particles[5] = 0;
 	particles[6] = 0;
+
+	particles[8 + 7] = 1000;
+	particles[8 + 4] = 0;
+	particles[8 + 5] = 0;
+	particles[8 + 6] = 0;
 
 	// Buffer for particles data
 	const particleBuffer = device.createBuffer({

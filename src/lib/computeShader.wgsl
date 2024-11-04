@@ -41,6 +41,11 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
         }
     }
 
+    // Disable first 2 particles from moving
+    if (index == 0 || index == 1) {
+        return;
+    }
+
     // Calculate gravity
     var force = vec3<f32>(0.0);
     for (var i = 0u; i < params.particleCount; i++) {
